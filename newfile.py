@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Calculadora de Média", layout="centered")
-st.title("📊 Calculadora de Média - Medicina UNIP")
+st.title("📊 Calculadora de Média - Medicina UNIP | Bruno Gaia")
 
 # Pesos das avaliações
 pesos = {"Tutoria": 3, "Teórica": 3, "Prática": 2, "EAP": 2}
