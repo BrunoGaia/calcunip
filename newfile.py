@@ -65,17 +65,19 @@ else:
                     combinacoes.append({slider_nome: round(x, 1), calculada_nome: round(y, 1)})
 
         if combinacoes:
-            df_combos = pd.DataFrame(combinacoes).drop_duplicates().sort_values(by=slider_nome, ascending=False).head(20)
-            st.markdown("### 🧮 Primeiras 20 combinações possíveis (fixas):")
+            df_combos = pd.DataFrame(combinacoes).drop_duplicates().sort_values(by=slider_nome, ascending=False).head(30)
+            st.markdown("### 🧮 Primeiras 30 combinações possíveis (fixas):")
             st.dataframe(df_combos, use_container_width=True)
 
-            # Gráfico com os pontos
+            # Gráfico com os pontos com escala 0.5
             x_vals = [d[slider_nome] for d in combinacoes]
             y_vals = [d[calculada_nome] for d in combinacoes]
             fig, ax = plt.subplots()
             ax.scatter(x_vals, y_vals, color='blue', s=10)
             ax.set_xlim(0, 10)
             ax.set_ylim(0, 10)
+            ax.set_xticks(np.arange(0, 10.5, 0.5))
+            ax.set_yticks(np.arange(0, 10.5, 0.5))
             ax.set_xlabel(slider_nome)
             ax.set_ylabel(calculada_nome)
             ax.set_title("🔵 Combinações possíveis para média 6.7")
@@ -83,5 +85,6 @@ else:
             st.pyplot(fig)
         else:
             st.error("❌ Nenhuma combinação possível para média 6.7 com as notas fornecidas.")
+
 
 
