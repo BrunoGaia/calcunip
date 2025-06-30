@@ -6,7 +6,7 @@ st.set_page_config(page_title="Calculadora de Média", layout="centered")
 st.title("📊 Calculadora de Média - Medicina UNIP | Bruno Gaia")
 
 # Pesos das avaliações
-pesos = {"Tutoria": 3, "Teórica": 3, "Prática": 2, "EAP": 2}
+pesos = {"Tutoria": 3, "Teórica": 3, "Prática": 2, "AEP": 2}
 
 # Entradas de nota
 st.markdown("### 📝 Digite suas notas (0 para as que ainda não foram feitas):")
